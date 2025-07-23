@@ -6,10 +6,7 @@
     "main"       : "entry.js",
     "author"     : "Mark Lee <mark.lee@capricasoftware.co.uk> (http://capricasoftware.co.uk/)",
 
-    "license": [{
-        "type": "Apache-2.0",
-        "url" : "http://www.apache.org/licenses/LICENSE-2.0"
-    }],
+    "license": "Apache-2.0",
 
     "dependencies": {
         "angular"            : "~1.3",
@@ -30,23 +27,18 @@
     },
 
     "devDependencies": {
-        "bootstrap-styl"     : "~4.0",
         "bootswatch"         : "~3.3",
         "browserify"         : "~9.0",
         "browserify-shim"    : "~3.8",
         "cpy"                : "~3.1",
-        "font-awesome-stylus": "~4.3",
         "hashmark"           : "~2.0",
         "jade"               : "~1.9",
         "jshint"             : "~2.6",
         "minifyify"          : "~6.4",
         "mkdirp"             : "~0.5",
-        "nib"                : "~1.1",
         "nodemon"            : "~1.3",
         "parallelshell"      : "~1.1",
-        "rimraf"             : "~2.3",
-        "stylus"             : "~0.50",
-        "toastr-stylus"      : "~2.0"
+        "rimraf"             : "~2.3"
     },
 
     "config": {
@@ -74,12 +66,12 @@
         "prebuild"           : "npm run clean -s ; mkdirp target/assets",
 
         "build:scripts"      : "browserify -d src/main/javascript/entry.js | hashmark -n target/assets/index.js -l 8 -m target/assets/assets.json -s src/main/resources/static/assets/{name}-{hash}{ext}",
-        "build:styles"       : "stylus src/main/styles/main.styl --include-css -I node_modules -m -o target/assets && hashmark -n assets/main.css -l 8 -m target/assets/assets.json -s target/assets/main.css src/main/resources/static/assets/{name}-{hash}{ext} && cpy 'target/assets/*.map' src/main/resources/static/assets",
+        "build:styles"       : "cpy src/main/styles/main.css target/assets && hashmark -n assets/main.css -l 8 -m target/assets/assets.json -s target/assets/main.css src/main/resources/static/assets/{name}-{hash}{ext}",
         "build:markup"       : "jade -P -o src/main/resources/static/assets src/main/markup/index.jade --obj target/assets/assets.json",
 
         "build"              : "npm run build:scripts -s && npm run build:styles -s && npm run build:markup -s",
 
-        "watch"              : "nodemon -q -w src/main/javascript -w src/main/styles -w src/main/markup --ext js,styl,css,jade --exec 'npm run build'",
+        "watch"              : "nodemon -q -w src/main/javascript -w src/main/styles -w src/main/markup --ext js,css,jade --exec 'npm run build'",
 
         "lint"               : "jshint src/main/javascript/**.js"
 

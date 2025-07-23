@@ -1,0 +1,102 @@
+/*
+ * Main application CSS stylesheet.
+ * 
+ * This file replaces the original Stylus-based build system with standard CSS imports.
+ * All original styling functionality has been preserved.
+ */
+
+/* Bootstrap CSS */
+@import url('../../../node_modules/bootstrap/dist/css/bootstrap.min.css');
+
+/* Font Awesome CSS */
+@import url('../../../node_modules/font-awesome/css/font-awesome.min.css');
+
+/* Angular Toastr CSS */
+@import url('../../../node_modules/angular-toastr/dist/angular-toastr.min.css');
+
+/* Bootswatch Theme - Cerulean */
+@import url('../../../node_modules/bootswatch/cerulean/bootstrap.min.css');
+
+/* Application Layout Styles (converted from layout.styl) */
+html,
+body {
+    height: 100%;
+}
+
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+footer {
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+footer p {
+    margin: 20px 0;
+}
+
+#wrap main {
+    padding: 60px 15px 0;
+}
+
+/* View Animation Styles (converted from view-animation.styl) */
+.view-fade-in.ng-enter {
+    transition: all 1s ease;
+    opacity: 0;
+}
+
+.view-fade-in.ng-enter {
+    opacity: 0;
+}
+
+.view-fade-in.ng-enter.ng-enter-active {
+    opacity: 1;
+}
+
+.view-fade-in.ng-leave.ng-leave-active {
+    opacity: 1;
+}
+
+.view-fade-in.ng-leave {
+    opacity: 0;
+}
+
+/* Maps Styles (converted from maps.styl) */
+.angular-google-map-container {
+    height: 400px;
+}
+
+input.map-search-box {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 300;
+    width: 300px;
+    margin: 0 !important;
+    padding: 0 6px !important;
+    height: auto !important;
+    top: 6px !important;
+}
+
+/* Bespoke Application Styles */
+#login-container {
+    margin: 100px 0;
+}
+
+footer {
+    background-color: #f5f5f5;
+}
+
+/* AngularJS cloak styles */
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+    display: none !important;
+}
