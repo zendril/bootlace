@@ -2,3 +2,6 @@ bower_components
 node_modules
 target
 junk
+/.idea/
+/src/main/resources/static/assets/
+/hashmark

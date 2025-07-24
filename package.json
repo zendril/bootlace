@@ -35,6 +35,7 @@
         "browserify"         : "~9.0",
         "browserify-shim"    : "~3.8",
         "cpy"                : "~3.1",
+        "cross-env"          : "^7.0.3",
         "font-awesome-stylus": "~4.3",
         "hashmark"           : "~2.0",
         "jade"               : "~1.9",
@@ -43,10 +44,11 @@
         "mkdirp"             : "~0.5",
         "nib"                : "~1.1",
         "nodemon"            : "~1.3",
+        "npm-run-all"        : "^4.1.5",
         "parallelshell"      : "~1.1",
         "rimraf"             : "~2.3",
-        "stylus"             : "~0.50",
-        "toastr-stylus"      : "~2.0"
+        "stylus"             : "https://github.com/stylus/stylus.git#0.54.5",
+        "toastr-stylus"      : "2.0.2-0.1.0"
     },
 
     "config": {
@@ -68,20 +70,28 @@
     },
 
     "scripts": {
+        "clean:assets"       : "rimraf target/assets",
+        "clean:html"         : "rimraf src/main/resources/static/assets/*.html",
+        "clean:js"           : "rimraf src/main/resources/static/assets/*.js",
+        "clean:css"          : "rimraf src/main/resources/static/assets/*.css",
+        "clean:maps"         : "rimraf src/main/resources/static/assets/*.map",
+        "clean"              : "run-s clean:assets clean:html clean:js clean:css clean:maps",
 
-        "clean"              : "rimraf target/assets ; rimraf src/main/resources/static/assets/*.html ; rimraf src/main/resources/static/assets/*.js ; rimraf src/main/resources/static/assets/*.css ; rimraf src/main/resources/static/assets/*.map",
-
-        "prebuild"           : "npm run clean -s ; mkdirp target/assets",
+        "mkdir:target"       : "mkdirp target/assets",
+        "prebuild"           : "run-s clean mkdir:target",
 
         "build:scripts"      : "browserify -d src/main/javascript/entry.js | hashmark -n target/assets/index.js -l 8 -m target/assets/assets.json -s src/main/resources/static/assets/{name}-{hash}{ext}",
-        "build:styles"       : "stylus src/main/styles/main.styl --include-css -I node_modules -m -o target/assets && hashmark -n assets/main.css -l 8 -m target/assets/assets.json -s target/assets/main.css src/main/resources/static/assets/{name}-{hash}{ext} && cpy 'target/assets/*.map' src/main/resources/static/assets",
+        "build:styles:compile": "stylus src/main/styles/main.styl --include-css -I node_modules -m -o target/assets",
+        "build:styles:hash"   : "hashmark -n assets/main.css -l 8 -m target/assets/assets.json -s target/assets/main.css src/main/resources/static/assets/{name}-{hash}{ext}",
+        "build:styles:copy"   : "cpy \"target/assets/*.map\" src/main/resources/static/assets",
+        "build:styles"       : "run-s build:styles:compile build:styles:hash build:styles:copy",
         "build:markup"       : "jade -P -o src/main/resources/static/assets src/main/markup/index.jade --obj target/assets/assets.json",
 
-        "build"              : "npm run build:scripts -s && npm run build:styles -s && npm run build:markup -s",
+        "build"              : "run-s build:scripts build:styles build:markup",
 
-        "watch"              : "nodemon -q -w src/main/javascript -w src/main/styles -w src/main/markup --ext js,styl,css,jade --exec 'npm run build'",
+        "watch"              : "nodemon -q -w src/main/javascript -w src/main/styles -w src/main/markup --ext js,styl,css,jade --exec \"npm run build\"",
 
-        "lint"               : "jshint src/main/javascript/**.js"
+        "lint"               : "jshint \"src/main/javascript/**/*.js\""
 
     }
 
