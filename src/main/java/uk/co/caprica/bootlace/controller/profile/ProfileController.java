@@ -20,6 +20,8 @@
 
 package uk.co.caprica.bootlace.controller.profile;
 
+import java.util.Optional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,14 +87,17 @@ public class ProfileController {
     public Profile getProfile(@AuthenticationPrincipal UserWithId user) {
         logger.debug("getProfile()");
         // Find and load the profile from the repository
-        Profile result = profileRepository.findOne(user.getId());
+        Optional<Profile> optionalProfile = profileRepository.findById(user.getId());
+        Profile result;
         // If a profile was not found, create one
-        if (result == null) {
+        if (!optionalProfile.isPresent()) {
             logger.debug("create new profile");
             // Use the same id as the authenticated user as the id for the profile
             Profile profile = new Profile();
             profile.setId(user.getId());
             result = profileRepository.save(profile);
+        } else {
+            result = optionalProfile.get();
         }
         logger.debug("result={}", result);
         return result;

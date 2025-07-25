@@ -28,7 +28,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
+import org.springframework.core.Ordered;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.access.annotation.Secured;
@@ -36,8 +36,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -58,7 +58,7 @@ import uk.co.caprica.bootlace.security.web.filter.AngularJsCsrfHeaderFilter;
 /**
  * Security configuration.
  * <p>
- * The {@link EnableWebMvcSecurity} annotation enables most things, but
+ * The {@link EnableWebSecurity} annotation enables most things, but
  * {@link EnableGlobalMethodSecurity} is also needed to enable method level security using the
  * {@link Secured} and {@link PreAuthorize} annotations.
  * <p>
@@ -75,9 +75,9 @@ import uk.co.caprica.bootlace.security.web.filter.AngularJsCsrfHeaderFilter;
  * successful login.
  */
 @Configuration
-@EnableWebMvcSecurity
+@EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled=true, prePostEnabled=true)
-@Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
+@Order(Ordered.HIGHEST_PRECEDENCE + 10)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     /**

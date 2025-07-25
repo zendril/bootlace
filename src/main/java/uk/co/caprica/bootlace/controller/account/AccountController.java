@@ -21,6 +21,7 @@
 package uk.co.caprica.bootlace.controller.account;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -81,10 +82,10 @@ public class AccountController {
     @Secured("ROLE_ADMIN")
     public Account getAccount(@PathVariable("id") String id) {
         logger.debug("getAccount(id={})", id);
-        Account result = accountRepository.findOne(id);
+        Optional<Account> result = accountRepository.findById(id);
         logger.debug("result={}", result);
-        if (result != null) {
-            return result;
+        if (result.isPresent()) {
+            return result.get();
         }
         else {
             throw new ResourceNotFoundException();

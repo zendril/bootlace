@@ -20,6 +20,8 @@
 
 package uk.co.caprica.bootlace.data;
 
+import java.util.Optional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.AuditorAware;
@@ -38,15 +40,15 @@ public class UsernameAuditor implements AuditorAware<String> {
     private final Logger logger = LoggerFactory.getLogger(UsernameAuditor.class);
 
     @Override
-    public String getCurrentAuditor() {
+    public Optional<String> getCurrentAuditor() {
         logger.debug("getCurrentAuditor()");
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String result;
+        Optional<String> result;
         if (authentication != null && authentication.isAuthenticated()) {
-            result = authentication.getName();
+            result = Optional.ofNullable(authentication.getName());
         }
         else {
-            result = null;
+            result = Optional.empty();
         }
         logger.debug("result={}", result);
         return result;
