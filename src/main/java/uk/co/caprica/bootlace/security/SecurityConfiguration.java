@@ -23,9 +23,9 @@ package uk.co.caprica.bootlace.security;
 import java.io.IOException;
 import java.util.List;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.Ordered;
@@ -37,7 +37,9 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -78,7 +80,7 @@ import uk.co.caprica.bootlace.security.web.filter.AngularJsCsrfHeaderFilter;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled=true, prePostEnabled=true)
 @Order(Ordered.HIGHEST_PRECEDENCE + 10)
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+public class SecurityConfiguration {
 
     /**
      * Name of the header that contains the CSRF token for AngularJS.
@@ -91,40 +93,43 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         // Unsecured access must be allowed to the application root, the default welcome page, all
         // of the URLs for the application routes, and all of the assets (Javascript/CSS etc) and
         // components (HTML partials for AngularJS templates)
         http
-            .httpBasic()
-                .and()
-            .authorizeRequests()
-                .antMatchers("/", "/index.html", "/app/**", "/assets/**", "/components/**")
+            .httpBasic(httpBasic -> {})
+            .authorizeHttpRequests(authz -> authz
+                .requestMatchers("/", "/index.html", "/app/**", "/assets/**", "/components/**")
                 .permitAll()
-            .anyRequest()
+                .anyRequest()
                 .authenticated()
-                .and()
-            .csrf()
+            )
+            .csrf(csrf -> csrf
                 .csrfTokenRepository(csrfTokenRepository())
-                .and()
+            )
             .addFilterAfter(new AngularJsCsrfHeaderFilter(), SessionManagementFilter.class)
-            .logout()
-                .logoutSuccessHandler(logoutSuccessHandler());
+            .logout(logout -> logout
+                .logoutSuccessHandler(logoutSuccessHandler())
+            );
+        return http.build();
     }
 
     /**
      * Configure the authentication manager to use the custom user details service and password
      * encoder.
      *
-     * @param auth authentication manager builder
+     * @return authentication manager
      * @throws Exception if an error occurs
      */
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-            .userDetailsService(getUserDetailsService())
-            .passwordEncoder(passwordEncoder);
+    @Bean
+    public org.springframework.security.authentication.AuthenticationManager authenticationManager() throws Exception {
+        org.springframework.security.authentication.dao.DaoAuthenticationProvider authProvider = 
+            new org.springframework.security.authentication.dao.DaoAuthenticationProvider();
+        authProvider.setUserDetailsService(getUserDetailsService());
+        authProvider.setPasswordEncoder(passwordEncoder);
+        return new org.springframework.security.authentication.ProviderManager(authProvider);
     }
 
     /**

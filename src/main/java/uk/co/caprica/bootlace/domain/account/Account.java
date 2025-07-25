@@ -22,7 +22,7 @@ package uk.co.caprica.bootlace.domain.account;
 
 import java.util.List;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
