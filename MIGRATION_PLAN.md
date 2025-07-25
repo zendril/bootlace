@@ -86,10 +86,10 @@ This migration plan is designed to be implemented in phases, allowing for a work
    - Update validation annotations ✅
    - Test thoroughly ✅
 
-#### Step 3: Update Other Dependencies
-- Update Guava (18.0 → 32.x)
-- Update OWASP Java HTML Sanitizer
-- Update other libraries as needed
+#### Step 3: Update Other Dependencies ✅ (Completed on 2025-07-25)
+- Update Guava (18.0 → 32.x) ✅
+- Update OWASP Java HTML Sanitizer ✅
+- Update other libraries as needed ✅
 
 #### Step 4: Migrate from Jetty to Tomcat
 - Remove Jetty exclusion and dependency
