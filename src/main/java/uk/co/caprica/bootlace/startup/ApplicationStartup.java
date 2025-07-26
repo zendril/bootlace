@@ -29,7 +29,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.data.mongodb.core.MongoOperations;
-import org.springframework.data.mongodb.core.index.TextIndexDefinition.TextIndexDefinitionBuilder;
+import org.springframework.data.mongodb.core.index.Index;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
@@ -102,10 +102,8 @@ public class ApplicationStartup implements ApplicationListener<ContextRefreshedE
         try {
             logger.info("Ensuring username index exists on 'account' collection");
             mongoOperations.indexOps("account")
-                .ensureIndex(new TextIndexDefinitionBuilder()
-                    .named("username")
-                    .onField("username")
-                    .build());
+                .createIndex(new Index().on("username", org.springframework.data.domain.Sort.Direction.ASC)
+                    .named("username_asc"));
             logger.info("Successfully ensured username index on 'account' collection");
         } catch (Exception e) {
             logger.error("Failed to create username index on 'account' collection: {}", e.getMessage(), e);

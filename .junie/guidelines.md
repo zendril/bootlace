@@ -14,3 +14,13 @@ This project uses Spring Boot.
 - **Kill Process (Windows):** `taskkill /PID <PID> /F`
 - **Start task in background (Windows):** `mvn spring-boot:run > spring-boot.log 2>&1 &`
 
+# Build & Testing
+
+- **Building:** Do NOT use 'Build entire project'. Do use `mvn clean compile`.
+- **Verifying:** 
+  - Launch `mvn spring-boot:run` using a script like:
+    ```
+    Start-Process -FilePath "cmd" -ArgumentList "/c", "mvn org.springframework.boot:spring-boot-maven-plugin:run > spring-boot-fixed.log 2>&1" -WindowStyle Hidden
+    ```
+  - then check the outputs for success or failure
+  - then find the process and kill it.

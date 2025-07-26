@@ -5,3 +5,4 @@ junk
 /.idea/
 /src/main/resources/static/assets/
 /hashmark
+*.log
