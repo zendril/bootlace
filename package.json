@@ -61,19 +61,22 @@
 
     "scripts": {
 
-        "clean"              : "rimraf target/assets ; rimraf src/main/resources/static/assets/*.html ; rimraf src/main/resources/static/assets/*.js ; rimraf src/main/resources/static/assets/*.css ; rimraf src/main/resources/static/assets/*.map",
+        "clean"              : "node node_modules/rimraf/bin.js target/assets",
 
-        "prebuild"           : "npm run clean -s ; mkdirp target/assets",
+        "prebuild"           : "npm run clean -s && node node_modules/mkdirp/bin/cmd.js target/assets",
 
-        "build:scripts"      : "browserify -d src/main/javascript/entry.js | hashmark -n target/assets/index.js -l 8 -m target/assets/assets.json -s src/main/resources/static/assets/{name}-{hash}{ext}",
-        "build:styles"       : "cpy src/main/styles/main.css target/assets && hashmark -n assets/main.css -l 8 -m target/assets/assets.json -s target/assets/main.css src/main/resources/static/assets/{name}-{hash}{ext}",
-        "build:markup"       : "jade -P -o src/main/resources/static/assets src/main/markup/index.jade --obj target/assets/assets.json",
+        "build:scripts"      : "node node_modules/browserify/bin/cmd.js --debug src/main/javascript/entry.js -o target/assets/index.js && node node_modules/hashmark/bin/hashmark target/assets/index.js -l 8 -m target/assets/assets.json -s \"target/assets/{name}-{hash}{ext}\"",
+        "build:scripts:debug" : "echo Starting browserify... && node node_modules/browserify/bin/cmd.js --debug src/main/javascript/entry.js -o target/assets/index.js && echo Browserify complete, starting hashmark... && node node_modules/hashmark/bin/hashmark target/assets/index.js -l 8 -m target/assets/assets.json -s \"target/assets/{name}-{hash}{ext}\" && echo Build complete!",
+        "build:styles"       : "node node_modules/cpy/cli.js node_modules/bootstrap/dist/css/bootstrap.min.css target/assets && node node_modules/cpy/cli.js node_modules/font-awesome/css/font-awesome.min.css target/assets && node node_modules/cpy/cli.js \"node_modules/font-awesome/fonts/*\" target/assets/fonts && node node_modules/cpy/cli.js node_modules/angular-toastr/dist/angular-toastr.min.css target/assets && copy \"node_modules\\bootswatch\\cerulean\\bootstrap.min.css\" \"target\\assets\\bootswatch.min.css\" && node scripts/build-css.js && node node_modules/hashmark/bin/hashmark target/assets/main.css -l 8 -m target/assets/assets.json -s \"target/assets/{name}-{hash}{ext}\"",
+        "build:markup"       : "node node_modules/jade/bin/jade.js -P -o target/assets src/main/markup/index.jade --obj target/assets/assets.json",
 
         "build"              : "npm run build:scripts -s && npm run build:styles -s && npm run build:markup -s",
+        "build:debug"        : "npm run build:scripts:debug && npm run build:styles && npm run build:markup",
+        "build:prod"         : "node node_modules/browserify/bin/cmd.js src/main/javascript/entry.js -p minifyify -o target/assets/index.js && node node_modules/hashmark/bin/hashmark target/assets/index.js -l 8 -m target/assets/assets.json -s \"target/assets/{name}-{hash}{ext}\" && npm run build:styles -s && npm run build:markup -s",
 
-        "watch"              : "nodemon -q -w src/main/javascript -w src/main/styles -w src/main/markup --ext js,css,jade --exec 'npm run build'",
+        "watch"              : "node node_modules/nodemon/bin/nodemon.js -q -w src/main/javascript -w src/main/styles -w src/main/markup --ext js,css,jade --exec \"npm run build\"",
 
-        "lint"               : "jshint src/main/javascript/**.js"
+        "lint"               : "node node_modules/jshint/bin/jshint src/main/javascript/**.js"
 
     }
 
