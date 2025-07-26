@@ -24,6 +24,7 @@ import java.util.List;
 
 import jakarta.validation.constraints.NotNull;
 
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import uk.co.caprica.bootlace.domain.AbstractEntity;
@@ -33,13 +34,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 /**
  * Model for an Account resource.
  */
-@Document
+@Document(collection = "accounts")
 public class Account extends AbstractEntity {
 
     /**
      * Username.
      */
     @NotNull
+    @Indexed(unique = true)
     private String username;
 
     /**

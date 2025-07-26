@@ -113,9 +113,14 @@ This migration plan is designed to be implemented in phases, allowing for a work
 - Modernize text index creation in ApplicationStartup ✅
 - Update query methods if needed ✅
 
-#### Step 3: Update Domain Model
-- Update MongoDB annotations
-- Ensure compatibility with latest Spring Data MongoDB
+#### Step 3: Update Domain Model ✅ (Completed on 2025-07-25)
+- Update MongoDB annotations ✅
+- Ensure compatibility with latest Spring Data MongoDB ✅
+  - Updated AbstractAuditableEntity to use java.time.Instant instead of java.util.Date ✅
+  - Added explicit collection names to @Document annotations ("accounts", "profiles") ✅
+  - Added @Indexed(unique = true) annotations to username and email fields for better performance ✅
+  - Verified application startup and MongoDB connectivity ✅
+  - All tests pass successfully ✅
 
 #### Step 4: Implement MongoDB Best Practices ✅ (Completed on 2025-07-25)
 - Enable authentication ✅

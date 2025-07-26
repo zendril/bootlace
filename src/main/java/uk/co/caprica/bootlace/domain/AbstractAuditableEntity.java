@@ -20,7 +20,7 @@
 
 package uk.co.caprica.bootlace.domain;
 
-import java.util.Date;
+import java.time.Instant;
 
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -59,7 +59,7 @@ public abstract class AbstractAuditableEntity extends AbstractEntity {
      * Standard property for the timestamp when the entity was created.
      */
     @CreatedDate
-    private Date createdDate;
+    private Instant createdDate;
 
     /**
      * Standard property for the username of the user that last modified the entity.
@@ -71,7 +71,7 @@ public abstract class AbstractAuditableEntity extends AbstractEntity {
      * Standard property for the timestamp when the entity was last modified.
      */
     @LastModifiedDate
-    private Date lastModifiedDate;
+    private Instant lastModifiedDate;
 
     /**
      * Standard property for the version of the entity.
@@ -89,11 +89,11 @@ public abstract class AbstractAuditableEntity extends AbstractEntity {
         this.createdBy = createdBy;
     }
 
-    public Date getCreatedDate() {
+    public Instant getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(Date createdDate) {
+    public void setCreatedDate(Instant createdDate) {
         this.createdDate = createdDate;
     }
 
@@ -105,11 +105,11 @@ public abstract class AbstractAuditableEntity extends AbstractEntity {
         this.lastModifiedBy = lastModifiedBy;
     }
 
-    public Date getLastModifiedDate() {
+    public Instant getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    public void setLastModifiedDate(Date lastModifiedDate) {
+    public void setLastModifiedDate(Instant lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
     }
 

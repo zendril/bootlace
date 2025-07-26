@@ -22,6 +22,7 @@ package uk.co.caprica.bootlace.domain.profile;
 
 import jakarta.validation.constraints.NotNull;
 
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import uk.co.caprica.bootlace.domain.AbstractAuditableEntity;
@@ -29,7 +30,7 @@ import uk.co.caprica.bootlace.domain.AbstractAuditableEntity;
 /**
  * Model for a Profile resource.
  */
-@Document
+@Document(collection = "profiles")
 public class Profile extends AbstractAuditableEntity {
 
     @NotNull
@@ -39,6 +40,7 @@ public class Profile extends AbstractAuditableEntity {
     private String surname;
 
     @NotNull
+    @Indexed(unique = true)
     private String email;
 
     public Profile() {
