@@ -9,7 +9,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.1</version>
+        <version>3.5.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -67,8 +67,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <!-- Using explicit version matching the parent -->
-                <version>3.2.1</version>
+                <!-- Version managed by Spring Boot parent -->
                 <configuration>
                     <jvmArguments>
                         --add-opens java.base/java.lang=ALL-UNNAMED

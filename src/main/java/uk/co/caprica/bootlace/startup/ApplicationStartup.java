@@ -79,21 +79,47 @@ public class ApplicationStartup implements ApplicationListener<ContextRefreshedE
 
     /**
      * Create the various database collections and indexes for this application.
+     * Enhanced with proper error handling as part of Step 4: MongoDB Best Practices.
      */
     private void createDatabase() {
         logger.debug("createDatabase()");
+        
+        // Create account collection with proper error handling
         try {
-            mongoOperations.createCollection("account");
+            if (!mongoOperations.collectionExists("account")) {
+                logger.info("Creating 'account' collection");
+                mongoOperations.createCollection("account");
+                logger.info("Successfully created 'account' collection");
+            } else {
+                logger.debug("Collection 'account' already exists, skipping creation");
+            }
+        } catch (Exception e) {
+            logger.error("Failed to create 'account' collection: {}", e.getMessage(), e);
+            throw new RuntimeException("Database initialization failed: Unable to create account collection", e);
+        }
+        
+        // Create username index with proper error handling
+        try {
+            logger.info("Ensuring username index exists on 'account' collection");
             mongoOperations.indexOps("account")
                 .ensureIndex(new TextIndexDefinitionBuilder()
                     .named("username")
                     .onField("username")
                     .build());
+            logger.info("Successfully ensured username index on 'account' collection");
+        } catch (Exception e) {
+            logger.error("Failed to create username index on 'account' collection: {}", e.getMessage(), e);
+            // Index creation failure is not critical for application startup, so we log but continue
+            logger.warn("Continuing application startup despite index creation failure");
         }
-        catch (Exception e) {
-            logger.debug("Exception creating database, assuming database already exists");
-            // This is most likely because the collection already exists, so ignore the error and
-            // carry on
+        
+        // Verify database connectivity
+        try {
+            long accountCount = mongoOperations.getCollection("account").estimatedDocumentCount();
+            logger.info("Database connectivity verified. Account collection contains {} documents", accountCount);
+        } catch (Exception e) {
+            logger.error("Failed to verify database connectivity: {}", e.getMessage(), e);
+            throw new RuntimeException("Database initialization failed: Unable to verify connectivity", e);
         }
     }
 
