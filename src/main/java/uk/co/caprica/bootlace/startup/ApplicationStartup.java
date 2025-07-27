@@ -73,8 +73,39 @@ public class ApplicationStartup implements ApplicationListener<ContextRefreshedE
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
         logger.info("onApplicationEvent(event={})", event);
+        
+        // Test MongoDB connection before proceeding
+        if (!testMongoConnection()) {
+            logger.error("MongoDB connection failed - application startup aborted");
+            throw new RuntimeException("Unable to connect to MongoDB. Please ensure MongoDB is running on localhost:27017");
+        }
+        
         createDatabase();
         seedDatabase();
+    }
+
+    /**
+     * Test MongoDB connection and provide detailed error information if connection fails.
+     * 
+     * @return true if connection is successful, false otherwise
+     */
+    private boolean testMongoConnection() {
+        try {
+            logger.info("Testing MongoDB connection...");
+            
+            // Test basic connectivity by running a simple command
+            mongoOperations.getCollection("test").count();
+            
+            logger.info("MongoDB connection test successful");
+            return true;
+        } catch (Exception e) {
+            logger.error("MongoDB connection test failed. Please check:", e);
+            logger.error("1. MongoDB server is running");
+            logger.error("2. MongoDB is accessible on localhost:27017");
+            logger.error("3. No firewall is blocking the connection");
+            logger.error("4. MongoDB service is started");
+            return false;
+        }
     }
 
     /**
@@ -83,17 +114,43 @@ public class ApplicationStartup implements ApplicationListener<ContextRefreshedE
     private void createDatabase() {
         logger.debug("createDatabase()");
         try {
-            mongoOperations.createCollection("account");
-            mongoOperations.indexOps("account")
-                .ensureIndex(new TextIndexDefinitionBuilder()
-                    .named("username")
-                    .onField("username")
-                    .build());
-        }
-        catch (Exception e) {
-            logger.debug("Exception creating database, assuming database already exists");
-            // This is most likely because the collection already exists, so ignore the error and
-            // carry on
+            // Check if collection already exists
+            if (!mongoOperations.collectionExists("account")) {
+                logger.info("Creating 'account' collection...");
+                try {
+                    mongoOperations.createCollection("account");
+                    logger.info("Account collection created successfully");
+                } catch (org.springframework.data.mongodb.UncategorizedMongoDbException e) {
+                    if (e.getMessage().contains("already exists")) {
+                        logger.debug("Account collection already exists (caught during creation)");
+                    } else {
+                        throw e;
+                    }
+                }
+            } else {
+                logger.debug("Account collection already exists");
+            }
+            
+            // Ensure index exists (with error handling for existing indexes)
+            logger.debug("Ensuring username index exists...");
+            try {
+                mongoOperations.getCollection("account").createIndex(
+                    new com.mongodb.BasicDBObject("username", 1),
+                    new com.mongodb.BasicDBObject("unique", true)
+                );
+                logger.debug("Username index created");
+            } catch (Exception indexException) {
+                if (indexException.getMessage().contains("already exists") || 
+                    indexException.getMessage().contains("duplicate key")) {
+                    logger.debug("Username index already exists");
+                } else {
+                    logger.warn("Could not create username index: {}", indexException.getMessage());
+                }
+            }
+            
+        } catch (Exception e) {
+            logger.error("Error creating database collections or indexes", e);
+            throw new RuntimeException("Failed to initialize database structure", e);
         }
     }
 
@@ -103,31 +160,58 @@ public class ApplicationStartup implements ApplicationListener<ContextRefreshedE
      */
     private void seedDatabase() {
         logger.debug("seedDatabase()");
-        List<String> adminRoles = new ArrayList<>();
-        adminRoles.add("ROLE_ADMIN");
-        adminRoles.add("ROLE_USER");
-        List<String> userRoles = new ArrayList<>();
-        userRoles.add("ROLE_USER");
-        if (accountRepository.findByUsername("mark") == null) {
-            Account markAdminAccount = new Account();
-            markAdminAccount.setUsername("mark");
-            markAdminAccount.setPassword(passwordEncoder.encode("bimble"));
-            markAdminAccount.setRoles(adminRoles);
-            accountRepository.save(markAdminAccount);
-        }
-        if (accountRepository.findByUsername("admin") == null) {
-            Account demoAdminAccount = new Account();
-            demoAdminAccount.setUsername("admin");
-            demoAdminAccount.setPassword(passwordEncoder.encode("admin"));
-            demoAdminAccount.setRoles(adminRoles);
-            accountRepository.save(demoAdminAccount);
-        }
-        if (accountRepository.findByUsername("user") == null) {
-            Account demoUserAccount = new Account();
-            demoUserAccount.setUsername("user");
-            demoUserAccount.setPassword(passwordEncoder.encode("user"));
-            demoUserAccount.setRoles(userRoles);
-            accountRepository.save(demoUserAccount);
+        
+        try {
+            List<String> adminRoles = new ArrayList<>();
+            adminRoles.add("ROLE_ADMIN");
+            adminRoles.add("ROLE_USER");
+            List<String> userRoles = new ArrayList<>();
+            userRoles.add("ROLE_USER");
+            
+            // Create admin account 'mark'
+            if (accountRepository.findByUsername("mark") == null) {
+                logger.info("Creating admin account: mark");
+                Account markAdminAccount = new Account();
+                markAdminAccount.setUsername("mark");
+                markAdminAccount.setPassword(passwordEncoder.encode("bimble"));
+                markAdminAccount.setRoles(adminRoles);
+                accountRepository.save(markAdminAccount);
+                logger.info("Admin account 'mark' created successfully");
+            } else {
+                logger.debug("Admin account 'mark' already exists");
+            }
+            
+            // Create admin account 'admin'
+            if (accountRepository.findByUsername("admin") == null) {
+                logger.info("Creating admin account: admin");
+                Account demoAdminAccount = new Account();
+                demoAdminAccount.setUsername("admin");
+                demoAdminAccount.setPassword(passwordEncoder.encode("admin"));
+                demoAdminAccount.setRoles(adminRoles);
+                accountRepository.save(demoAdminAccount);
+                logger.info("Admin account 'admin' created successfully");
+            } else {
+                logger.debug("Admin account 'admin' already exists");
+            }
+            
+            // Create user account 'user'
+            if (accountRepository.findByUsername("user") == null) {
+                logger.info("Creating user account: user");
+                Account demoUserAccount = new Account();
+                demoUserAccount.setUsername("user");
+                demoUserAccount.setPassword(passwordEncoder.encode("user"));
+                demoUserAccount.setRoles(userRoles);
+                accountRepository.save(demoUserAccount);
+                logger.info("User account 'user' created successfully");
+            } else {
+                logger.debug("User account 'user' already exists");
+            }
+            
+            logger.info("Database seeding completed successfully");
+            
+        } catch (Exception e) {
+            logger.error("Error seeding database with initial data", e);
+            throw new RuntimeException("Failed to seed database with initial accounts", e);
         }
     }
 
