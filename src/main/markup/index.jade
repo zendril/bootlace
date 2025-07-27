@@ -5,8 +5,8 @@ html(lang="en" ng-app="bootlace" ng-strict-di)
         meta(charset="utf-8")
         meta(name="viewport" content="width=device-width, initial-scale=1")
         title(ng-bind="'Bootlace - ' + $root.pageTitle") Bootlace
-        script(src="#{locals['target/assets/index.js'].substr('src/main/resources/static'.length)}")
-        link(rel="stylesheet" href="#{locals['target/assets/main.css'].substr('src/main/resources/static'.length)}")
+        script(src="#{locals['target/assets/index.js'].replace('target/assets/', '/assets/')}")
+        link(rel="stylesheet" href="#{locals['target/assets/main.css'].replace('target/assets/', '/assets/')}")
     body(ng-controller="SessionController")
         #wrap
             .navbar.navbar-default.navbar-fixed-top

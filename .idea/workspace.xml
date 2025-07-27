@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="72cd6e21-cfbe-4454-943b-f990bc720d02" name="Changes" comment="completed phase 2 step 3">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="30GG5SZlHr8R8LTUJbpEG1VGT70" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "vendor/windsurf",
+    "junie.onboarding.icon.badge.shown": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.build:scripts.executor": "Run",
+    "npm.prebuild.executor": "Run",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "junie.allowlist",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TEXT"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\devhome\projects\github\zendril\bootlace\.junie" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.BootlaceApplication">
+    <configuration name="BootlaceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../tools/java/jdk-17.0.0.1" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <module name="bootlace" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="uk.co.caprica.bootlace.BootlaceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="build:scripts" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build:scripts" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="prebuild" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="prebuild" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.build:scripts" />
+      <item itemvalue="npm.prebuild" />
+      <item itemvalue="Spring Boot.BootlaceApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build:scripts" />
+        <item itemvalue="npm.prebuild" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.27812.49" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.27812.49" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="72cd6e21-cfbe-4454-943b-f990bc720d02" name="Changes" comment="" />
+      <created>1753246313038</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1753246313038</updated>
+      <workItem from="1753246314979" duration="13201000" />
+      <workItem from="1753332139887" duration="29522000" />
+      <workItem from="1753484014053" duration="202000" />
+      <workItem from="1753484258081" duration="11000" />
+      <workItem from="1753484276614" duration="11626000" />
+      <workItem from="1753547187790" duration="1093000" />
+    </task>
+    <task id="LOCAL-00001" summary="got the app running. had to fix the package.json (and for now pulled the stylus package straight from github since it was pulled from npm">
+      <option name="closed" value="true" />
+      <created>1753330116109</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1753330116109</updated>
+    </task>
+    <task id="LOCAL-00002" summary="app running on spring 2.7 at this point">
+      <option name="closed" value="true" />
+      <created>1753417260686</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1753417260686</updated>
+    </task>
+    <task id="LOCAL-00003" summary="updated to spring 3.2.1">
+      <option name="closed" value="true" />
+      <created>1753418991464</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1753418991464</updated>
+    </task>
+    <task id="LOCAL-00004" summary="completed step 3, other dependency updates">
+      <option name="closed" value="true" />
+      <created>1753484618493</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1753484618493</updated>
+    </task>
+    <task id="LOCAL-00005" summary="completed phase 2 step 1">
+      <option name="closed" value="true" />
+      <created>1753495783211</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1753495783211</updated>
+    </task>
+    <task id="LOCAL-00006" summary="completed phase 2 step 2">
+      <option name="closed" value="true" />
+      <created>1753497366512</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1753497366512</updated>
+    </task>
+    <task id="LOCAL-00007" summary="completed phase 2 step 3">
+      <option name="closed" value="true" />
+      <created>1753497878685</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1753497878685</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-core" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.security:spring-security-core" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-websocket" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:angular" />
+    <option featureType="dependencySupport" implementationName="executable:docker" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:stylus" />
+    <option featureType="dependencySupport" implementationName="executable:kubectl" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.data:spring-data-commons" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-messaging" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="got the app running. had to fix the package.json (and for now pulled the stylus package straight from github since it was pulled from npm" />
+    <MESSAGE value="app running on spring 2.7 at this point" />
+    <MESSAGE value="updated to spring 3.2.1" />
+    <MESSAGE value="completed step 3, other dependency updates" />
+    <MESSAGE value="completed phase 2 step 1" />
+    <MESSAGE value="completed phase 2 step 2" />
+    <MESSAGE value="completed phase 2 step 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="completed phase 2 step 3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
