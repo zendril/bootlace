@@ -60,7 +60,7 @@
   </component>
   <component name="RunManager" selected="Spring Boot.BootlaceApplication">
     <configuration name="BootlaceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../tools/java/jdk-17.0.0.1" />
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="bootlace" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="uk.co.caprica.bootlace.BootlaceApplication" />

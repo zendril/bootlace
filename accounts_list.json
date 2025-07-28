@@ -1,0 +1,13 @@
+[ {
+  "id" : "6885a97a5c2e2dd1378c2eca",
+  "username" : "mark",
+  "roles" : [ "ROLE_ADMIN", "ROLE_USER" ]
+}, {
+  "id" : "6885a97b5c2e2dd1378c2ecb",
+  "username" : "admin",
+  "roles" : [ "ROLE_ADMIN", "ROLE_USER" ]
+}, {
+  "id" : "6885a97b5c2e2dd1378c2ecc",
+  "username" : "user",
+  "roles" : [ "ROLE_USER" ]
+} ]

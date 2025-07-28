@@ -1,0 +1,8 @@
+{
+  "timestamp" : 1753646678644,
+  "status" : 403,
+  "error" : "Forbidden",
+  "exception" : "org.springframework.security.access.AccessDeniedException",
+  "message" : "Access is denied",
+  "path" : "/accounts"
+}

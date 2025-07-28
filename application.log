@@ -1,0 +1,197 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< uk.co.caprica:bootlace >-----------------------
+[INFO] Building Bootlace 1.0.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot-maven-plugin:1.2.3.RELEASE:run (default-cli) > test-compile @ bootlace >>>
+Downloading from gemfire-repository: http://dist.gemstone.com/maven/release/com/google/guava/guava/maven-metadata.xml
+[WARNING] Could not transfer metadata com.google.guava:guava/maven-metadata.xml from/to gemfire-repository (http://dist.gemstone.com/maven/release): Transfer failed for http://dist.gemstone.com/maven/release/com/google/guava/guava/maven-metadata.xml
+Downloading from gemfire-repository: http://dist.gemstone.com/maven/release/commons-codec/commons-codec/maven-metadata.xml
+[WARNING] Could not transfer metadata commons-codec:commons-codec/maven-metadata.xml from/to gemfire-repository (http://dist.gemstone.com/maven/release): Transfer failed for http://dist.gemstone.com/maven/release/commons-codec/commons-codec/maven-metadata.xml
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.1.11:revision (default) @ bootlace ---
+[info] dotGitDirectory C:\devhome\projects\github\zendril\bootlace\.git
+[info] git.build.user.name Zendril
+[info] git.build.user.email kenneth.s.brooks@gmail.com
+[info] git.branch vendor/kiro
+[info] Tag refs [ [] ]
+[info] Created map: [ {} ] 
+[info] HEAD is [ 705bdfb7a90b2b0729386ddfae136288d26b7f39 ] 
+[info] Repo is in dirty state [ true ]
+[info] git.commit.id.describe 705bdfb
+[info] git.commit.id 705bdfb7a90b2b0729386ddfae136288d26b7f39
+[info] git.commit.id.abbrev 705bdfb
+[info] git.commit.user.name Zendril
+[info] git.commit.user.email kenneth.s.brooks@gmail.com
+[info] git.commit.message.full completed task 2
+
+[info] git.commit.message.short completed task 2
+[info] git.commit.time 2025-07-27T00:47:43-0400
+[info] git.remote.origin.url git@github.com:zendril/bootlace.git
+[info] git.tags 
+[info] git.build.time 2025-07-27T16:02:55-0400
+[info] git.commit.id.describe-short 705bdfb
+[info] found property git.tags
+[info] found property git.commit.id.abbrev
+[info] found property git.commit.user.email
+[info] found property git.commit.message.full
+[info] found property git.commit.id
+[info] found property git.commit.id.describe-short
+[info] found property git.commit.message.short
+[info] found property git.commit.user.name
+[info] found property git.build.user.name
+[info] found property git.commit.id.describe
+[info] found property git.build.user.email
+[info] found property git.branch
+[info] found property git.commit.time
+[info] found property git.build.time
+[info] found property git.remote.origin.url
+[info] Writing properties file to [ C:\devhome\projects\github\zendril\bootlace\target\classes\git.properties ] (for module  Bootlace )...
+[info] Bootlace ] project Bootlace
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ bootlace ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 10 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ bootlace ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ bootlace ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ bootlace ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< spring-boot-maven-plugin:1.2.3.RELEASE:run (default-cli) < test-compile @ bootlace <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:1.2.3.RELEASE:run (default-cli) @ bootlace ---
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.2.3.RELEASE)
+
+2025-07-27 16:02:55.882  INFO 40188 --- [lication.main()] u.c.c.bootlace.BootlaceApplication       : Starting BootlaceApplication on zora with PID 40188 (C:\devhome\projects\github\zendril\bootlace\target\classes started by zendril in C:\devhome\projects\github\zendril\bootlace)
+2025-07-27 16:02:55.883 DEBUG 40188 --- [lication.main()] u.c.c.bootlace.BootlaceApplication       : Running with Spring Boot v1.2.3.RELEASE, Spring v4.1.6.RELEASE
+2025-07-27 16:02:55.895  INFO 40188 --- [lication.main()] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@34eb0374: startup date [Sun Jul 27 16:02:55 EDT 2025]; root of context hierarchy
+2025-07-27 16:02:56.236  INFO 40188 --- [lication.main()] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2025-07-27 16:02:56.567  INFO 40188 --- [lication.main()] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [class org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$5a94c10b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-27 16:02:56.578  INFO 40188 --- [lication.main()] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [class org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-27 16:02:56.578  INFO 40188 --- [lication.main()] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@78988d85' of type [class org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-27 16:02:56.582  INFO 40188 --- [lication.main()] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [class org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$d72f57d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-27 16:02:56.587  INFO 40188 --- [lication.main()] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [class org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-27 16:02:56.590  INFO 40188 --- [lication.main()] trationDelegate$BeanPostProcessorChecker : Bean 'metaDataSourceAdvisor' of type [class org.springframework.security.access.intercept.aopalliance.MethodSecurityMetadataSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-07-27 16:02:56.727  INFO 40188 --- [lication.main()] e.j.JettyEmbeddedServletContainerFactory : Server initialized with port: 8080
+2025-07-27 16:02:56.729  INFO 40188 --- [lication.main()] org.eclipse.jetty.server.Server          : jetty-9.2.9.v20150224
+2025-07-27 16:02:56.779  INFO 40188 --- [lication.main()] /                                        : Initializing Spring embedded WebApplicationContext
+2025-07-27 16:02:56.779  INFO 40188 --- [lication.main()] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 884 ms
+2025-07-27 16:02:57.308 DEBUG 40188 --- [lication.main()] u.c.c.bootlace.BootlaceApplication       : prettyJson=true
+2025-07-27 16:02:57.783  INFO 40188 --- [lication.main()] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/metrics/{name:.*}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+2025-07-27 16:02:57.783  INFO 40188 --- [lication.main()] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/metrics],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2025-07-27 16:02:57.783  INFO 40188 --- [lication.main()] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env/{name:.*}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+2025-07-27 16:02:57.783  INFO 40188 --- [lication.main()] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2025-07-27 16:02:57.783  INFO 40188 --- [lication.main()] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/shutdown],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.ShutdownMvcEndpoint.invoke()
+2025-07-27 16:02:57.783  INFO 40188 --- [lication.main()] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/info],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2025-07-27 16:02:57.784  INFO 40188 --- [lication.main()] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/mappings],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2025-07-27 16:02:57.784  INFO 40188 --- [lication.main()] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/trace],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2025-07-27 16:02:57.784  INFO 40188 --- [lication.main()] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/configprops],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2025-07-27 16:02:57.784  INFO 40188 --- [lication.main()] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/beans],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2025-07-27 16:02:57.784  INFO 40188 --- [lication.main()] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/autoconfig],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2025-07-27 16:02:57.785  INFO 40188 --- [lication.main()] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/health],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(java.security.Principal)
+2025-07-27 16:02:57.785  INFO 40188 --- [lication.main()] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/dump],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2025-07-27 16:02:57.851  INFO 40188 --- [lication.main()] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/css/**'], []
+2025-07-27 16:02:57.851  INFO 40188 --- [lication.main()] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/js/**'], []
+2025-07-27 16:02:57.851  INFO 40188 --- [lication.main()] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/images/**'], []
+2025-07-27 16:02:57.851  INFO 40188 --- [lication.main()] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**/favicon.ico'], []
+2025-07-27 16:02:57.851  INFO 40188 --- [lication.main()] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/error'], []
+2025-07-27 16:02:57.869  INFO 40188 --- [lication.main()] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/info'], Ant [pattern='/info/**'], Ant [pattern='/info.*'], Ant [pattern='/health'], Ant [pattern='/health/**'], Ant [pattern='/health.*'], Ant [pattern='/metrics'], Ant [pattern='/metrics/**'], Ant [pattern='/metrics.*'], Ant [pattern='/env'], Ant [pattern='/env/**'], Ant [pattern='/env.*'], Ant [pattern='/shutdown'], Ant [pattern='/shutdown/**'], Ant [pattern='/shutdown.*'], Ant [pattern='/mappings'], Ant [pattern='/mappings/**'], Ant [pattern='/mappings.*'], Ant [pattern='/trace'], Ant [pattern='/trace/**'], Ant [pattern='/trace.*'], Ant [pattern='/configprops'], Ant [pattern='/configprops/**'], Ant [pattern='/configprops.*'], Ant [pattern='/beans'], Ant [pattern='/beans/**'], Ant [pattern='/beans.*'], Ant [pattern='/autoconfig'], Ant [pattern='/autoconfig/**'], Ant [pattern='/autoconfig.*'], Ant [pattern='/dump'], Ant [pattern='/dump/**'], Ant [pattern='/dump.*']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4af14d5b, org.springframework.security.web.context.SecurityContextPersistenceFilter@25ac0938, org.springframework.security.web.header.HeaderWriterFilter@4d6583af, org.springframework.security.web.authentication.logout.LogoutFilter@2e544334, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5f828125, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@24df00d2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@31991236, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@d88efa4, org.springframework.security.web.session.SessionManagementFilter@6497857, org.springframework.security.web.access.ExceptionTranslationFilter@30963806, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@592649a7]
+2025-07-27 16:02:57.876  INFO 40188 --- [lication.main()] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7c6b7f59, org.springframework.security.web.context.SecurityContextPersistenceFilter@1037e5ac, org.springframework.security.web.header.HeaderWriterFilter@410b706c, org.springframework.security.web.csrf.CsrfFilter@29be92ee, org.springframework.security.web.authentication.logout.LogoutFilter@488f502e, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@673ac616, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5d2a5e3d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4738dde4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2faa24ff, org.springframework.security.web.session.SessionManagementFilter@a50bd10, uk.co.caprica.bootlace.security.web.filter.AngularJsCsrfHeaderFilter@6856faf, org.springframework.security.web.access.ExceptionTranslationFilter@341e1207, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@308855d6]
+2025-07-27 16:02:57.903  INFO 40188 --- [lication.main()] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService  'metricsExecutor'
+2025-07-27 16:02:57.936  INFO 40188 --- [lication.main()] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2025-07-27 16:02:57.938  INFO 40188 --- [lication.main()] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'metricFilter' to: [/*]
+2025-07-27 16:02:57.938  INFO 40188 --- [lication.main()] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2025-07-27 16:02:57.939  INFO 40188 --- [lication.main()] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'webRequestLoggingFilter' to: [/*]
+2025-07-27 16:02:57.939  INFO 40188 --- [lication.main()] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2025-07-27 16:02:57.939  INFO 40188 --- [lication.main()] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2025-07-27 16:02:57.939  INFO 40188 --- [lication.main()] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'applicationContextIdFilter' to: [/*]
+2025-07-27 16:02:57.946  INFO 40188 --- [lication.main()] o.e.jetty.server.handler.ContextHandler  : Started o.s.b.c.e.j.JettyEmbeddedWebAppContext@6c5690e9{/,null,AVAILABLE}
+2025-07-27 16:02:57.946  INFO 40188 --- [lication.main()] org.eclipse.jetty.server.Server          : Started @4942ms
+2025-07-27 16:02:58.056  INFO 40188 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@34eb0374: startup date [Sun Jul 27 16:02:55 EDT 2025]; root of context hierarchy
+2025-07-27 16:02:58.077  INFO 40188 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<uk.co.caprica.bootlace.domain.account.Account> uk.co.caprica.bootlace.controller.account.AccountController.getAllAccounts()
+2025-07-27 16:02:58.077  INFO 40188 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public uk.co.caprica.bootlace.domain.account.Account uk.co.caprica.bootlace.controller.account.AccountController.getAccount(java.lang.String)
+2025-07-27 16:02:58.077  INFO 40188 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/ || /index.html],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String uk.co.caprica.bootlace.controller.ApplicationController.index()
+2025-07-27 16:02:58.077  INFO 40188 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/app/**],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String uk.co.caprica.bootlace.controller.ApplicationController.app()
+2025-07-27 16:02:58.077  INFO 40188 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/health],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> uk.co.caprica.bootlace.controller.HealthController.checkOverallHealth()
+2025-07-27 16:02:58.078  INFO 40188 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/health/mongodb],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> uk.co.caprica.bootlace.controller.HealthController.checkMongoHealth()
+2025-07-27 16:02:58.078  INFO 40188 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/profile],methods=[PUT],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public uk.co.caprica.bootlace.domain.profile.Profile uk.co.caprica.bootlace.controller.profile.ProfileController.saveProfile(uk.co.caprica.bootlace.security.domain.UserWithId,uk.co.caprica.bootlace.domain.profile.Profile)
+2025-07-27 16:02:58.078  INFO 40188 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/profile],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public uk.co.caprica.bootlace.domain.profile.Profile uk.co.caprica.bootlace.controller.profile.ProfileController.getProfile(uk.co.caprica.bootlace.security.domain.UserWithId)
+2025-07-27 16:02:58.078  INFO 40188 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.security.Principal uk.co.caprica.bootlace.security.web.controller.SessionController.user(java.security.Principal)
+2025-07-27 16:02:58.080  INFO 40188 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2025-07-27 16:02:58.080  INFO 40188 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+2025-07-27 16:02:58.092  INFO 40188 --- [lication.main()] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2025-07-27 16:02:58.092  INFO 40188 --- [lication.main()] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2025-07-27 16:02:58.123  INFO 40188 --- [lication.main()] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2025-07-27 16:02:58.227  INFO 40188 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2025-07-27 16:02:58.234  INFO 40188 --- [lication.main()] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2025-07-27 16:02:58.265  INFO 40188 --- [lication.main()] u.c.c.b.startup.ApplicationStartup       : onApplicationEvent(event=org.springframework.context.event.ContextRefreshedEvent[source=org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@34eb0374: startup date [Sun Jul 27 16:02:55 EDT 2025]; root of context hierarchy])
+2025-07-27 16:02:58.266  INFO 40188 --- [lication.main()] u.c.c.b.startup.ApplicationStartup       : Testing MongoDB connection...
+2025-07-27 16:02:58.274  INFO 40188 --- [lication.main()] u.c.c.b.startup.ApplicationStartup       : MongoDB connection test successful
+2025-07-27 16:02:58.274 DEBUG 40188 --- [lication.main()] u.c.c.b.startup.ApplicationStartup       : createDatabase()
+2025-07-27 16:02:58.275  INFO 40188 --- [lication.main()] u.c.c.b.startup.ApplicationStartup       : Creating 'account' collection...
+2025-07-27 16:02:58.276 DEBUG 40188 --- [lication.main()] u.c.c.b.startup.ApplicationStartup       : Account collection already exists (caught during creation)
+2025-07-27 16:02:58.276 DEBUG 40188 --- [lication.main()] u.c.c.b.startup.ApplicationStartup       : Ensuring username index exists...
+2025-07-27 16:02:58.277 DEBUG 40188 --- [lication.main()] u.c.c.b.startup.ApplicationStartup       : Username index created
+2025-07-27 16:02:58.278 DEBUG 40188 --- [lication.main()] u.c.c.b.startup.ApplicationStartup       : seedDatabase()
+2025-07-27 16:02:58.291 DEBUG 40188 --- [lication.main()] u.c.c.b.startup.ApplicationStartup       : Admin account 'mark' already exists
+2025-07-27 16:02:58.292 DEBUG 40188 --- [lication.main()] u.c.c.b.startup.ApplicationStartup       : Admin account 'admin' already exists
+2025-07-27 16:02:58.292 DEBUG 40188 --- [lication.main()] u.c.c.b.startup.ApplicationStartup       : User account 'user' already exists
+2025-07-27 16:02:58.292  INFO 40188 --- [lication.main()] u.c.c.b.startup.ApplicationStartup       : Database seeding completed successfully
+2025-07-27 16:02:58.296  INFO 40188 --- [lication.main()] /                                        : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2025-07-27 16:02:58.296  INFO 40188 --- [lication.main()] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2025-07-27 16:02:58.304  INFO 40188 --- [lication.main()] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 8 ms
+2025-07-27 16:02:58.339  INFO 40188 --- [lication.main()] o.eclipse.jetty.server.ServerConnector   : Started ServerConnector@6ceb55ab{HTTP/1.1}{0.0.0.0:8080}
+2025-07-27 16:02:58.340  INFO 40188 --- [lication.main()] .s.b.c.e.j.JettyEmbeddedServletContainer : Jetty started on port(s) 8080 (http/1.1)
+2025-07-27 16:02:58.351  INFO 40188 --- [lication.main()] u.c.c.bootlace.BootlaceApplication       : Started BootlaceApplication in 2.634 seconds (JVM running for 5.347)
+2025-07-27 16:04:38.168 DEBUG 40188 --- [tp1046201494-27] u.c.c.b.s.w.f.AngularJsCsrfHeaderFilter  : doFilterInternal()
+2025-07-27 16:04:38.171 DEBUG 40188 --- [tp1046201494-27] u.c.c.b.s.w.f.AngularJsCsrfHeaderFilter  : Setting new CSRF cookie
+2025-07-27 16:04:38.175  INFO 40188 --- [tp1046201494-27] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun Jul 27 16:04:38 EDT 2025, principal=anonymousUser, type=AUTHORIZATION_FAILURE, data={type=org.springframework.security.access.AccessDeniedException, message=Access is denied}]
+2025-07-27 16:04:38.245 DEBUG 40188 --- [tp1046201494-30] u.c.c.b.s.w.f.AngularJsCsrfHeaderFilter  : doFilterInternal()
+2025-07-27 16:04:38.245 DEBUG 40188 --- [tp1046201494-30] u.c.c.b.s.w.f.AngularJsCsrfHeaderFilter  : Setting new CSRF cookie
+2025-07-27 16:04:38.246  INFO 40188 --- [tp1046201494-30] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun Jul 27 16:04:38 EDT 2025, principal=anonymousUser, type=AUTHORIZATION_FAILURE, data={type=org.springframework.security.access.AccessDeniedException, message=Access is denied}]
+2025-07-27 16:04:38.331  INFO 40188 --- [tp1046201494-27] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun Jul 27 16:04:38 EDT 2025, principal=admin, type=AUTHENTICATION_SUCCESS, data={details=org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null}]
+2025-07-27 16:04:38.332 DEBUG 40188 --- [tp1046201494-27] u.c.c.b.s.w.f.AngularJsCsrfHeaderFilter  : doFilterInternal()
+2025-07-27 16:04:38.332 DEBUG 40188 --- [tp1046201494-27] u.c.c.b.s.w.f.AngularJsCsrfHeaderFilter  : Setting new CSRF cookie
+2025-07-27 16:04:38.336 DEBUG 40188 --- [tp1046201494-27] u.c.c.b.c.account.AccountController      : getAllAccounts()
+2025-07-27 16:04:38.340 DEBUG 40188 --- [tp1046201494-27] u.c.c.b.c.account.AccountController      : result=[Account{id=6885a97a5c2e2dd1378c2eca, username=mark, roles=[ROLE_ADMIN, ROLE_USER]}, Account{id=6885a97b5c2e2dd1378c2ecb, username=admin, roles=[ROLE_ADMIN, ROLE_USER]}, Account{id=6885a97b5c2e2dd1378c2ecc, username=user, roles=[ROLE_USER]}]
+2025-07-27 16:04:38.427  INFO 40188 --- [tp1046201494-27] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun Jul 27 16:04:38 EDT 2025, principal=user, type=AUTHENTICATION_SUCCESS, data={details=org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null}]
+2025-07-27 16:04:38.427 DEBUG 40188 --- [tp1046201494-27] u.c.c.b.s.w.f.AngularJsCsrfHeaderFilter  : doFilterInternal()
+2025-07-27 16:04:38.427 DEBUG 40188 --- [tp1046201494-27] u.c.c.b.s.w.f.AngularJsCsrfHeaderFilter  : Setting new CSRF cookie
+2025-07-27 16:04:38.431 DEBUG 40188 --- [tp1046201494-27] u.c.c.b.c.profile.ProfileController      : getProfile()
+2025-07-27 16:04:38.432 DEBUG 40188 --- [tp1046201494-27] u.c.c.b.c.profile.ProfileController      : create new profile
+2025-07-27 16:04:38.438 DEBUG 40188 --- [tp1046201494-27] u.c.c.bootlace.data.UsernameAuditor      : getCurrentAuditor()
+2025-07-27 16:04:38.438 DEBUG 40188 --- [tp1046201494-27] u.c.c.bootlace.data.UsernameAuditor      : result=user
+2025-07-27 16:04:38.473 DEBUG 40188 --- [tp1046201494-27] u.c.c.b.c.profile.ProfileController      : result=Profile{id=6885a97b5c2e2dd1378c2ecc, createdBy=user, createdDate=Sun Jul 27 16:04:38 EDT 2025, lastModifiedBy=user, lastModifiedDate=Sun Jul 27 16:04:38 EDT 2025, version=0, forename=null, surname=null, email=null}
+2025-07-27 16:04:38.554  INFO 40188 --- [tp1046201494-27] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun Jul 27 16:04:38 EDT 2025, principal=admin, type=AUTHENTICATION_SUCCESS, data={details=org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null}]
+2025-07-27 16:04:38.554 DEBUG 40188 --- [tp1046201494-27] u.c.c.b.s.w.f.AngularJsCsrfHeaderFilter  : doFilterInternal()
+2025-07-27 16:04:38.554 DEBUG 40188 --- [tp1046201494-27] u.c.c.b.s.w.f.AngularJsCsrfHeaderFilter  : Setting new CSRF cookie
+2025-07-27 16:04:38.555 DEBUG 40188 --- [tp1046201494-27] u.c.c.b.c.profile.ProfileController      : getProfile()
+2025-07-27 16:04:38.556 DEBUG 40188 --- [tp1046201494-27] u.c.c.b.c.profile.ProfileController      : create new profile
+2025-07-27 16:04:38.557 DEBUG 40188 --- [tp1046201494-27] u.c.c.bootlace.data.UsernameAuditor      : getCurrentAuditor()
+2025-07-27 16:04:38.557 DEBUG 40188 --- [tp1046201494-27] u.c.c.bootlace.data.UsernameAuditor      : result=admin
+2025-07-27 16:04:38.557 DEBUG 40188 --- [tp1046201494-27] u.c.c.b.c.profile.ProfileController      : result=Profile{id=6885a97b5c2e2dd1378c2ecb, createdBy=admin, createdDate=Sun Jul 27 16:04:38 EDT 2025, lastModifiedBy=admin, lastModifiedDate=Sun Jul 27 16:04:38 EDT 2025, version=0, forename=null, surname=null, email=null}
+2025-07-27 16:04:38.641  INFO 40188 --- [tp1046201494-27] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun Jul 27 16:04:38 EDT 2025, principal=user, type=AUTHENTICATION_SUCCESS, data={details=org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null}]
+2025-07-27 16:04:38.641 DEBUG 40188 --- [tp1046201494-27] u.c.c.b.s.w.f.AngularJsCsrfHeaderFilter  : doFilterInternal()
+2025-07-27 16:04:38.641 DEBUG 40188 --- [tp1046201494-27] u.c.c.b.s.w.f.AngularJsCsrfHeaderFilter  : Setting new CSRF cookie
+2025-07-27 16:04:38.642  INFO 40188 --- [tp1046201494-27] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun Jul 27 16:04:38 EDT 2025, principal=user, type=AUTHORIZATION_FAILURE, data={type=org.springframework.security.access.AccessDeniedException, message=Access is denied}]
+2025-07-27 16:04:38.687 DEBUG 40188 --- [tp1046201494-27] u.c.c.b.s.w.f.AngularJsCsrfHeaderFilter  : doFilterInternal()
+2025-07-27 16:04:38.687 DEBUG 40188 --- [tp1046201494-27] u.c.c.b.s.w.f.AngularJsCsrfHeaderFilter  : Setting new CSRF cookie
+2025-07-27 16:04:38.688 DEBUG 40188 --- [tp1046201494-27] u.c.c.b.c.ApplicationController          : index()
+
+CLINK C:\devhome\projects\github\zendril\bootlace>More? 
